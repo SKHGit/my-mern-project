@@ -17,7 +17,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 
 mongoose
-  .connect("mongodb://127.0.0.1:27017/mern-person")
+  .connect("mongodb://mongo:27017/mern-person")
   .then(() => {
     console.log("MongoDB Connected");
     app.listen(5000, () => console.log("Server running on 5000"));

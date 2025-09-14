@@ -9,7 +9,7 @@ export default function List() {
 
   const fetchUsers = () => {
     axios
-      .get("http://localhost:5000/api/users", {
+      .get("/api/users", {
         headers: { Authorization: token },
       })
       .then((res) => setUsers(res.data));
@@ -20,7 +20,7 @@ export default function List() {
   }, []);
 
   const handleDelete = async (id) => {
-    await axios.delete(`http://localhost:5000/api/users/${id}`, {
+    await axios.delete(`/api/users/${id}`, {
       headers: { Authorization: token },
     });
     fetchUsers();
@@ -32,7 +32,7 @@ export default function List() {
   };
 
   const handleUpdate = async () => {
-    await axios.put(`http://localhost:5000/api/users/${editingId}`, editForm, {
+    await axios.put(`/api/users/${editingId}`, editForm, {
       headers: { Authorization: token },
     });
     setEditingId(null);
