@@ -32,7 +32,7 @@ export default function Signup() {
     setLoading(true);
     if (!validate()) return;
     try {
-      await axios.post("http://localhost:5000/api/auth/signup", form);
+      await axios.post("/api/auth/signup", form);
       alert("User Registered!");
     } catch (err) {
       alert(err.response?.data?.error || "Signup failed");
